@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Meme Will you go on a date with me? 🌸</title>
+  <title>ميمي نطلع ديت 🌸</title>
   <!-- مكتبة الاحتفال بالقصاصات الملونة Confetti -->
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
   <style>
@@ -100,6 +100,7 @@
       font-weight: 600;
       cursor: pointer;
       transition: all 0.2s ease;
+      font-family: inherit;
     }
 
     .btn-primary {
@@ -230,9 +231,9 @@
     <div class="img-container">
       <img src="https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=400&q=80" alt="Cute Dog">
     </div>
-    <h2>🌸ميمي نطلع ديت ؟🌸</h2>
+    <h2>🌸 ميمي، تطلعين ويايا ديت؟ 🌸</h2>
     <div class="btn-group">
-      <button class="btn-primary" onclick="nextStep(2)">نعم♥</button>
+      <button class="btn-primary" onclick="nextStep(2)">اي أكيد ♥</button>
       <button id="no-btn" class="btn-secondary" onclick="moveNoButton()" onmouseover="moveNoButton()">لا 🐾</button>
     </div>
   </div>
@@ -240,15 +241,15 @@
   <!-- STEP 2: SURPRISE -->
   <div id="step-2" class="card">
     <div class="icon-emoji">🧽</div>
-    <h2>صدك كلتي نعم 😭</h2>
-    <p class="subtitle">ليش مكلتي لا ؟</p>
-    <button class="btn-primary" onclick="nextStep(3)">okay okay! →</button>
+    <h2> ميمي صدك وافقتي؟؟ 😭</h2>
+    <p class="subtitle"> متوقع تحاولين ترفضين </p>
+    <button class="btn-primary" onclick="nextStep(3)">اوكي اوكي! ←</button>
   </div>
 
-  <!-- STEP 3: FOOD SELECTION (الأكلات المعدلة) -->
+  <!-- STEP 3: FOOD SELECTION -->
   <div id="step-3" class="card">
-    <h2>شنو حابة نأكل؟ 🍽️✨</h2>
-    <p class="subtitle">اختاري يرويحتي</p>
+    <h2>شنو حابة نأكل يا ميمي؟ 🍽️✨</h2>
+    <p class="subtitle">ااختاري يرويحتي</p>
     <div class="food-grid">
       <div class="food-card" onclick="selectFood('ستيك لحم')">
         <span class="emoji">🥩</span>
@@ -280,48 +281,48 @@
   <!-- STEP 4: DATE & TIME PICKER -->
   <div id="step-4" class="card">
     <div class="icon-emoji">📅🐾</div>
-    <h2>So... when are you free?</h2>
+    <h2>زين ميمي... شوكت تكونين متوفرة؟</h2>
     <div class="form-group" style="margin-top: 15px;">
-      <label>Pick a Day 📅</label>
+      <label>اختاري اليوم 📅</label>
       <input type="date" id="date-input">
     </div>
     <div class="form-group">
-      <label>What Time? ⏰</label>
+      <label>يا ساعة يناسبج؟ ⏰</label>
       <select id="time-input">
-        <option value="">Select a time...</option>
-        <option value="06:00 PM">06:00 PM</option>
-        <option value="07:00 PM">07:00 PM</option>
-        <option value="08:00 PM">08:00 PM</option>
-        <option value="09:00 PM">09:00 PM</option>
+        <option value="">اختاري الوقت...</option>
+        <option value="06:00 PM">06:00 مساءً</option>
+        <option value="07:00 PM">07:00 مساءً</option>
+        <option value="08:00 PM">08:00 مساءً</option>
+        <option value="09:00 PM">09:00 مساءً</option>
       </select>
     </div>
-    <button class="btn-primary" onclick="nextStep(5)">set the date! ♥</button>
+    <button class="btn-primary" onclick="nextStep(5)">تأكيد الموعد! ♥</button>
   </div>
 
   <!-- STEP 5: SMALL FEE -->
   <div id="step-5" class="card">
     <div class="icon-emoji">💳</div>
-    <h2>one small fee</h2>
-    <p class="subtitle">to confirm your acceptance of this date, please complete the following transaction. totally normal. everyone does this.</p>
+    <h2>بقت رسوم بسيطة!</h2>
+    <p class="subtitle">لتأكيد الموعد ويا ميمي، يرجى إتمام العملية التالية</p>
     
     <div class="fee-box">
       <div class="fee-info">
-        <div class="fee-title">Date Agreement™</div>
-        <div class="fee-sub">one-time fee • non-refundable • absolutely worth it</div>
+        <div class="fee-title">اتفاقية موعد ميمي™</div>
+        <div class="fee-sub">تدفع مرة واحدة • غير قابلة للاسترجاع • تستاهل كل فلس</div>
       </div>
       <div class="fee-amount">$99</div>
     </div>
 
-    <button class="btn-primary" onclick="finishProposal()">pay $99 & confirm 💖</button>
-    <div class="link-btn" onclick="nextStep(4)">go back</div>
+    <button class="btn-primary" onclick="finishProposal()">دفع $99 والتأكيد 💖</button>
+    <div class="link-btn" onclick="nextStep(4)">رجوع للخلف</div>
   </div>
 
   <!-- STEP 6: FINAL CONFIRMATION -->
   <div id="step-6" class="card">
-    <h2>glad you didn't say no. be ready by 6, I'm coming to get you 🚗</h2>
-    <p class="subtitle" style="margin-top: 15px;">P.S. normal people text. I made a website for you. no big deal.</p>
+    <h2>الحمد لله ما كلتي لا! كوني جاهزة، جاي أخذج 🚗</h2>
+    <p class="subtitle" style="margin-top: 15px;">ملاحظة: الناس العادية تدز رسالة.. بس أني سويت موقع كامل لخاطر ميمي! مو شي جبير يعني 😎</p>
     <div style="color: #d81b60; font-size: 20px; margin: 15px 0;">♥ ♥ ♥ ♥ ♥</div>
-    <button class="btn-primary" onclick="celebrateAgain()">ok I accept 💖</button>
+    <button class="btn-primary" onclick="celebrateAgain()">مواقفة وأقبل 💖</button>
   </div>
 
   <script>
