@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Will you go on a date with me? 🌸</title>
+  <title>Meme Will you go on a date with me? 🌸</title>
   <!-- مكتبة الاحتفال بالقصاصات الملونة Confetti -->
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
   <style>
@@ -15,7 +15,7 @@
 
     body {
       background-color: #fce4ec;
-      font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -138,7 +138,7 @@
 
     .food-card:hover {
       border-color: #f48fb1;
-      background: #fffe;
+      background: #ffffff;
       transform: scale(1.03);
     }
 
@@ -156,7 +156,7 @@
 
     /* Form Styles */
     .form-group {
-      text-align: left;
+      text-align: right;
       margin-bottom: 15px;
     }
 
@@ -176,6 +176,7 @@
       font-size: 14px;
       outline: none;
       background: #fffafa;
+      font-family: inherit;
     }
 
     /* Fee Box Style */
@@ -191,7 +192,7 @@
     }
 
     .fee-info {
-      text-align: left;
+      text-align: right;
     }
 
     .fee-title {
@@ -246,32 +247,32 @@
 
   <!-- STEP 3: FOOD SELECTION -->
   <div id="step-3" class="card">
-    <h2>What are we feeling? 🍽️✨</h2>
-    <p class="subtitle">pick your vibe</p>
+    <h2>شنو حابة نأكل؟ 🍽️✨</h2>
+    <p class="subtitle">اختار الوجبة اللي تعجبك</p>
     <div class="food-grid">
-      <div class="food-card" onclick="selectFood('Pizza')">
+      <div class="food-card" onclick="selectFood('ستيك لحم')">
+        <span class="emoji">🥩</span>
+        <span>ستيك لحم</span>
+      </div>
+      <div class="food-card" onclick="selectFood('بيتزا')">
         <span class="emoji">🍕</span>
-        <span>Pizza</span>
+        <span>بيتزا</span>
       </div>
-      <div class="food-card" onclick="selectFood('Sushi')">
-        <span class="emoji">🍣</span>
-        <span>Sushi</span>
+      <div class="food-card" onclick="selectFood('شاورما')">
+        <span class="emoji">🥙</span>
+        <span>شاورما</span>
       </div>
-      <div class="food-card" onclick="selectFood('Burgers')">
+      <div class="food-card" onclick="selectFood('مشاوي')">
+        <span class="emoji">🍢</span>
+        <span>مشاوي</span>
+      </div>
+      <div class="food-card" onclick="selectFood('فاست فود')">
         <span class="emoji">🍔</span>
-        <span>Burgers</span>
+        <span>فاست فود</span>
       </div>
-      <div class="food-card" onclick="selectFood('Pasta')">
+      <div class="food-card" onclick="selectFood('باستا')">
         <span class="emoji">🍝</span>
-        <span>Pasta</span>
-      </div>
-      <div class="food-card" onclick="selectFood('Tacos')">
-        <span class="emoji">🌮</span>
-        <span>Tacos</span>
-      </div>
-      <div class="food-card" onclick="selectFood('shawrma')">
-        <span class="emoji"></span>
-        <span>Ramen</span>
+        <span>باستا</span>
       </div>
     </div>
   </div>
@@ -317,7 +318,7 @@
 
   <!-- STEP 6: FINAL CONFIRMATION -->
   <div id="step-6" class="card">
-    <h2>glad you didn't say no. be ready by 8, I'm coming to get you 🚗</h2>
+    <h2>glad you didn't say no. be ready by 6, I'm coming to get you 🚗</h2>
     <p class="subtitle" style="margin-top: 15px;">P.S. normal people text. I made a website for you. no big deal.</p>
     <div style="color: #d81b60; font-size: 20px; margin: 15px 0;">♥ ♥ ♥ ♥ ♥</div>
     <button class="btn-primary" onclick="celebrateAgain()">ok I accept 💖</button>
