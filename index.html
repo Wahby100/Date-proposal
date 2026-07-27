@@ -2,7 +2,7 @@
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>ميمي نطلع ديت 🌸</title>
   <!-- مكتبة الاحتفال بالقصاصات الملونة Confetti -->
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
@@ -11,6 +11,7 @@
       box-sizing: border-box;
       margin: 0;
       padding: 0;
+      -webkit-tap-highlight-color: transparent;
     }
 
     body {
@@ -22,6 +23,7 @@
       min-height: 100vh;
       color: #4a2c35;
       padding: 20px;
+      overflow-x: hidden;
     }
 
     .card {
@@ -87,9 +89,11 @@
     .btn-group {
       display: flex;
       justify-content: center;
+      align-items: center;
       gap: 12px;
       margin-top: 20px;
       position: relative;
+      min-height: 50px;
     }
 
     button {
@@ -99,7 +103,7 @@
       font-size: 15px;
       font-weight: 600;
       cursor: pointer;
-      transition: all 0.2s ease;
+      transition: all 0.15s ease;
       font-family: inherit;
     }
 
@@ -118,6 +122,7 @@
     .btn-secondary {
       background-color: #b39ddb;
       color: white;
+      z-index: 999;
     }
 
     /* Food Grid Style */
@@ -234,7 +239,10 @@
     <h2>🌸 ميمي، تطلعين ويايا ديت؟ 🌸</h2>
     <div class="btn-group">
       <button class="btn-primary" onclick="nextStep(2)">اي أكيد ♥</button>
-      <button id="no-btn" class="btn-secondary" onclick="moveNoButton()" onmouseover="moveNoButton()">لا 🐾</button>
+      <button id="no-btn" class="btn-secondary" 
+              onclick="moveNoButton(event)" 
+              onmouseover="moveNoButton(event)" 
+              ontouchstart="moveNoButton(event)">لا 🐾</button>
     </div>
   </div>
 
@@ -335,13 +343,21 @@
       document.getElementById('step-' + stepNumber).classList.add('active');
     }
 
-    function moveNoButton() {
+    function moveNoButton(e) {
+      if (e) {
+        e.preventDefault(); // منع استجابة الضغط المباشر على الهاتف
+      }
       const btn = document.getElementById('no-btn');
       btn.style.position = 'fixed';
-      const x = Math.random() * (window.innerWidth - btn.offsetWidth - 40);
-      const y = Math.random() * (window.innerHeight - btn.offsetHeight - 40);
-      btn.style.left = Math.max(20, x) + 'px';
-      btn.style.top = Math.max(20, y) + 'px';
+      
+      const maxX = window.innerWidth - btn.offsetWidth - 20;
+      const maxY = window.innerHeight - btn.offsetHeight - 20;
+      
+      const randomX = Math.floor(Math.random() * (maxX - 20)) + 20;
+      const randomY = Math.floor(Math.random() * (maxY - 20)) + 20;
+      
+      btn.style.left = randomX + 'px';
+      btn.style.top = randomY + 'px';
     }
 
     function selectFood(food) {
